@@ -1,4 +1,4 @@
-package com.projeto.veterinaria.model;
+package com.projeto.pet.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
