@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Endereco {
+public class Endereco extends Prescricao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

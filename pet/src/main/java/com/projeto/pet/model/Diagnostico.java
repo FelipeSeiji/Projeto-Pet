@@ -1,10 +1,7 @@
 package com.projeto.pet.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import java.util.List;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,4 +17,7 @@ public class Diagnostico {
     private Long id;
 
     private String descricao;
+
+    @OneToMany(mappedBy = "diagnostico", cascade = CascadeType.ALL)
+    private List<Doenca> doencas;
 }

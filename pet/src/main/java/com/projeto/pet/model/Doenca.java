@@ -1,13 +1,10 @@
 package com.projeto.pet.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Entity
 @Table(name = "doenca")
@@ -21,4 +18,11 @@ public class Doenca {
 
     private String nome;
     private String descricao;
+
+    @ManyToOne
+    @JoinColumn(name = "diagnostico_id")
+    private Diagnostico diagnostico;
+
+    @OneToMany(mappedBy = "doenca", cascade = CascadeType.ALL)
+    private List<Sintoma> sintomas;
 }
